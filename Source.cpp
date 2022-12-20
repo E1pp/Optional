@@ -32,16 +32,6 @@ struct MoveAndDel {
 
 
 int main() {
-	MoveAndDel val = 5;
-	optional<MoveAndDel> test(val);
-	test = MoveAndDel(5);
-	std::cout << (*test).a << '\n';
-	optional<int> new_test(100000);
-	optional<int> another;
-	another = std::move(new_test);
-	constexpr optional<int> n;
-	constexpr optional<int> duuh = optional<int>(5);
-	std::cout << bool(another) << '\n';
-	std::cout << bool(n) << '\n';
+	
 	
 }
