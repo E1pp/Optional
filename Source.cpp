@@ -4,29 +4,18 @@
 #include <concepts>
 
 struct MoveAndDel {
-	int a;
 	MoveAndDel() noexcept = default;
-	MoveAndDel(const int& other) noexcept: a(other) {
-	}
-	MoveAndDel(int&& other) noexcept: a(std::move(other)) {
-	}
-	MoveAndDel(const MoveAndDel& other) noexcept : a(other.a) {
-	}
-	MoveAndDel(MoveAndDel&& other) noexcept : a(std::move(other.a)) {
-	}
+	MoveAndDel(const int& other) noexcept {}
+	MoveAndDel(int&& other) noexcept {}
+	MoveAndDel(const MoveAndDel& other) noexcept {}
+	MoveAndDel(MoveAndDel&& other) noexcept  {}
 	MoveAndDel& operator=(const MoveAndDel& other) {
-		a = other.a;
 		return *this;
 	}
 	MoveAndDel& operator=(MoveAndDel&& other) noexcept {
-		a = std::move(other.a);
 		return *this;
 	}
-
-	~MoveAndDel() {
-	}
-
-
+	~MoveAndDel() {}
 };
 
 
